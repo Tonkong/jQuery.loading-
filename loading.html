@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Basic TreeGrid - jQuery EasyUI Demo</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+<button type="button">显示/Show</button>
+<button type="button" class="hidden">隐藏/Hide</button>
+<div class="demo" style="position: relative; padding: 10px; border:2px solid #BFE0F1;min-height: 60px;"></div>
+<script src="tang.loading.js"></script>
+<script>
+    /*示例*/
+    var $Container = $(".demo");//待加载内容与显示loading的容器
+    $("button").click(function () {//显示loading
+        $Container.empty();//测试
+        $.TangLoading({$container: $Container});
+    });
+    $(".hidden").click(function () {//隐藏loading
+        $.TangLoading({$container: $Container, display: false});
+        $Container.html("Test---Test---Test---Test---Test---Test---");//测试显示加载的数据
+    });
+</script>
+</body>
+</html>
